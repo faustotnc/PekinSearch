@@ -9,7 +9,7 @@ Some of the data transformations and machine learning techniques used in this se
 - Data Visualizations
 
 ## Data Flow
-![nlp data flow diagram](./NLP-DATA-Flow.png)
+![nlp data flow diagram](./NLP-Data-Flow.png)
 
 ### Useful Links
 - Twitter API: https://developer.twitter.com/en/docs
