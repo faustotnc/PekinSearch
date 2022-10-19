@@ -13,7 +13,7 @@ Some of the data transformations and machine learning techniques used in this se
 
 ### Useful Links
 - Twitter API: https://developer.twitter.com/en/docs
-- HugginFace:
+- HuggingFace:
     - Text Summarization: https://huggingface.co/tasks/summarization
     - Topic Modeling: https://towardsdatascience.com/topic-modeling-with-bert-779f7db187e6
     - Sentiment Analysis: https://huggingface.co/blog/sentiment-analysis-python
