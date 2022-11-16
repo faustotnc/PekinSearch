@@ -610,3 +610,6 @@ $RECYCLE.BIN/
 *.lnk
 
 # End of https://www.toptal.com/developers/gitignore/api/python,react,angular,node,macos,windows,visualstudiocode,pycharm,intellij
+
+# Other
+bearer_token.txt

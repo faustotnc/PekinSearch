@@ -21,6 +21,9 @@ Some of the data transformations and machine learning techniques used in this se
     - Response Type: JSON
     - Example Request: `/search/01012020/12312021/cellphone,iphone,apple,tech/`
 
+## Topic Modeling Diagram
+![topic modeling diagram](./Topic-Modeling.jpg)
+
 ## Useful Links
 - Twitter API
     - Docs: https://developer.twitter.com/en/docs
