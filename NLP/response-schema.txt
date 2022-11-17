@@ -1,0 +1,57 @@
+{
+    # The Tweets Data. One entry per tweet.
+    "tweets": [
+        {
+            # Raw data from Twitter API
+            "id": number,
+            "text": string,
+            "clean_text": string,
+            "created_at": DateTime,
+            "is_sensitive": boolean,
+            "retweet_count": number,
+            "reply_count": number,
+            "like_count": number,
+            "quote_count": number,
+            hashtags: [], # Array of string hashtags
+
+            # This is the sum of "retweet_count", "reply_count", "like_count", and "quote_count"
+            "rating": number,
+
+            # Sentiment Analysis
+            "sentiment_label": String->OneOf{"positive", "negative", "neutral"},
+            "sentiment_score": number,
+
+            # Emotion Analysis
+            "emotion_label": String->OneOf{"anger", "fear", "joy", "love", "sadness", "surprise"}
+            "emotion_score": number,
+
+            # Clustering (from topic-modeling)
+            "cluster_id": number, # The id of the cluster this tweet belongs to.
+            "cluster_x": number, # When clustered in 2d space, the x-coordinate of this tweet in that space
+            "cluster_y": number, # When clustered in 2d space, the y-coordinate of this tweet in that space
+        }
+    ],
+
+    # Topic Modeling
+    # The words and their associated relevance in each of the clusters.
+    # Has the form: {`cluster_id`: [{ "word": string, "score": number }, ...], ...}
+    "topics": {
+        1: [
+            { "word": string, "score": number },
+            { "word": string, "score": number },
+            { "word": string, "score": number },
+            ...
+        ],
+        2: [
+            { "word": string, "score": number },
+            { "word": string, "score": number },
+            { "word": string, "score": number },
+            ...
+        ],
+        ...
+    }
+
+    # A single-string summary of the 16 tweets with the highest rating.
+    # This helps the user understand the most important tweets with a quick summary. 
+    "summary": string
+}
