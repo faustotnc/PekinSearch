@@ -3,15 +3,27 @@ from transformers import pipeline
 from sentence_transformers import SentenceTransformer
 from get_tweets import make_twitter_call
 from topic_modeling import do_topic_modeling
+from flask_cors import CORS
 
 # Initialize Flask app.
+print("Initializing Flash app.")
 APP = Flask(__name__)
+CORS(APP)
+print("\t--- Done!\n")
 
 # Load all pre-trained machine learning models.
+print("1/4: Initializing Sentiment Pipeline")
 sentiment_pipeline = pipeline("text-classification", model='cardiffnlp/twitter-roberta-base-sentiment-latest')
+print("\t--- Done!")
+print("2/4: Initializing Emotion Pipeline")
 emotion_pipeline = pipeline("text-classification", model='bhadresh-savani/distilbert-base-uncased-emotion')
+print("\t--- Done!")
+print("3/4: Initializing Topic Modeling Summary Pipeline")
 topic_modeling_summary_model = SentenceTransformer('sentence-transformers/paraphrase-albert-small-v2')
+print("\t--- Done!")
+print("4/4: Initializing Summarization Pipeline")
 summarization_pipeline = pipeline("summarization")
+print("\t--- Done!")
 
 
 def get_sentiments_and_emotions(data):
@@ -60,7 +72,6 @@ def hello_world(tags: str):
     data, tweets_summary = do_text_summarization(data)
     print("--- Step 3 Done!")
 
-    # Combine the DataFrame and the topic clusters into one JSON file.
     # convert dates to strings
     data['created_at'] = data['created_at'].astype(str)
 
@@ -72,6 +83,7 @@ def hello_world(tags: str):
     }
 
     return jsonify(json_data)
+
 
 if __name__ == "__main__":
     APP.run()

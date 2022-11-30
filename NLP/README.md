@@ -14,12 +14,10 @@ Some of the data transformations and machine learning techniques used in this se
 ## API
 - Search Query Request
     - Request Type: `GET`
-    - Path: `/search/<start>/<end>/<tags>/`
-        - start: The timeline's start date for the search in the `MMDDYYYY` format.
-        - end: The timeline's end date for the search in the `MMDDYYYY` format.
+    - Path: `/search/<tags>/`
         - tags: The comma-separated list of hashtags to include in the search.
     - Response Type: JSON
-    - Example Request: `/search/01012020/12312021/cellphone,iphone,apple,tech/`
+    - Example Request: `/search/cellphone,iphone,apple,tech/`
 
 ## Topic Modeling Diagram
 ![topic modeling diagram](./Topic-Modeling.jpg)
